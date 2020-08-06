@@ -1,3 +1,5 @@
+This is code for searching data in Pubmed
+
 from Bio import Medline
 from Bio import Entrez
 import pandas as pd
@@ -29,7 +31,6 @@ idlist = record_2["IdList"]
 
 
 handle = Entrez.efetch(db="pubmed", id=idlist, rettype ="medline", retmode = 'text')
-# handle = Entrez.efetch(db="pubmed", id=idlist, retmode = 'text')
 record = Medline.parse(handle)
 records = list(record)
 
