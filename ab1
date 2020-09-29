@@ -26,7 +26,7 @@ B = list(record.adnnotations["abif_raw"]["DATA10])[1000:10900]
 C = list(record.adnnotations["abif_raw"]["DATA11])[1000:10900]
 D = list(record.adnnotations["abif_raw"]["DATA12])[1000:10900]
 
-length = len(A)
+length = len(A) # length of x-axis
 count = 0
 
 ali = []
@@ -39,7 +39,7 @@ for num in range(length):
     if num == 0:
         pass
     else:
-        a = A[num] - A[num-1]
+        a = A[num] - A[num-1] # height of y
         b = B[num] - B[num-1]
         c = C[num] - C[num-1]
         d = D[num] - D[num-1]
