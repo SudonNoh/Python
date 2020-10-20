@@ -17,15 +17,9 @@ class Myapp(QWidget):
         super().__init__()
 
         self.settings = QSettings('QtApp', 'App1')
-        print(self.settings.fileName())
-
-
-
-
         self.SAVEUI()
 
     def SAVEUI(self):
-
 
         self.lb1 = QLabel("From")
         self.lb2 = QLabel("To")
