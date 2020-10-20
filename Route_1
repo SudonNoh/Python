@@ -1,0 +1,81 @@
+# Route 1 은 개인 REGI 에서 팀 REGI 로 이동하도록 하는 프로그램
+
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QLineEdit
+
+class Myapp(QWidget):
+
+    def __init__(self):
+        super().__init__()
+        self.SAVEUI()
+
+    def SAVEUI(self):
+        self.lb1 = QLabel("From")
+        self.lb2 = QLabel("To")
+        self.search_btn1 = QPushButton("찾기")
+        self.search_btn2 = QPushButton("찾기")
+        self.save_btn = QPushButton("SAVE")
+        self.file_load1 = QLineEdit()
+        self.file_load2 = QLineEdit()
+
+        self.lb1.setFixedSize(30, 40)
+        self.lb2.setFixedSize(30, 40)
+        self.save_btn.setFixedSize(70, 30)
+
+
+        Hbox1 = QHBoxLayout()
+        Hbox2 = QHBoxLayout()
+        Vbox = QVBoxLayout()
+
+        Hbox1.addWidget(self.lb1)
+        Hbox1.addWidget(self.file_load1)
+        Hbox1.addWidget(self.search_btn1)
+
+        Hbox2.addWidget(self.lb2)
+        Hbox2.addWidget(self.file_load2)
+        Hbox2.addWidget(self.search_btn2)
+
+        Vbox.addLayout(Hbox1)
+        Vbox.addLayout(Hbox2)
+        Vbox.addWidget(self.save_btn, alignment=Qt.AlignHCenter)
+
+        self.search_btn1.clicked.connect(self.openfile1)
+        self.search_btn2.clicked.connect(self.openfile2)
+        self.save_btn.clicked.connect(self.save)
+
+        self.setLayout(Vbox)
+
+        self.setWindowTitle('REGI SAVE')
+        self.setWindowIcon(QIcon('Ybio.png'))
+        self.resize(400, 150)
+        self.show()
+
+    def openfile1(self):
+        filename = QFileDialog.getOpenFileName()
+        self.file_load1.setText(filename[0])
+
+    def openfile2(self):
+        filename = QFileDialog.getOpenFileName()
+        self.file_load2.setText(filename[0])
+
+    def save(self):
+        file1 = self.file_load1.text()
+        file2 = self.file_load2.text()
+
+        print(file1)
+        print(file2)
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QApplication(sys.argv)
+    ex = Myapp()
+    exit(app.exec_())
