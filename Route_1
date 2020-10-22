@@ -1,5 +1,6 @@
 # Route 1 은 개인 REGI 에서 팀 REGI 로 이동하도록 하는 프로그램
 
+import sys
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtWidgets import QPushButton
@@ -81,16 +82,17 @@ class Myapp(QWidget):
 
 
 if __name__ == "__main__":
-    import sys
+
     app = QApplication(sys.argv)
     ex = Myapp()
-    exit(app.exec_())
+    sys.exit(app.exec_())
 
 
 # ------UPDATE-------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Route 1 은 개인 REGI 에서 팀 REGI 로 이동하도록 하는 프로그램
 
+import sys
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtWidgets import QPushButton
@@ -188,7 +190,7 @@ class Myapp(QWidget):
 
 
 if __name__ == "__main__":
-    import sys
+
     app = QApplication(sys.argv)
     ex = Myapp()
-    exit(app.exec_())
+    sys.exit(app.exec_())
