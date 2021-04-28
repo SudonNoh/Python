@@ -58,8 +58,8 @@ driver.get('website address')
 
 time.sleep(15)
 
-driver.find_element_by_name('j_id0:j_id6:j_id7:form:j_id53').send_keys('parkb2@ybiologics.com')
-driver.find_element_by_name('j_id0:j_id6:j_id7:form:j_id55').send_keys('Ybio2021!')
+driver.find_element_by_name('j_id0:j_id6:j_id7:form:j_id53').send_keys('UserID')
+driver.find_element_by_name('j_id0:j_id6:j_id7:form:j_id55').send_keys('UserPW')
 driver.find_element_by_xpath('//*[@id="j_id0:j_id6:j_id7:form:usr-pwd-auth"]/div[3]/input').click()
 
 print(5)
