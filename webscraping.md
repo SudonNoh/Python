@@ -32,22 +32,4 @@ time 은 실행 중 delay 걸리는 부분을 해소하기 위해 사용
 import pandas as pd
 ```
 pandas 는 추출한 데이터를 DataFrame 형태로 만드는데 사용
-<br>  </br>
-<h3>2. headless 모드</h3>
-```python
-options = webdriver.ChromeOptions()
-options.add_argument('headless')
-options.add_argument('window-size=1920x1080')
-options.add_argument("disable-gpu")
 
-options.add_argument(
-    "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36")
-
-
-driver = webdriver.Chrome('chromedriver Route')
-
-driver.implicitly_wait(5)
-```
-<br></br>
-
-<h3>3. 
